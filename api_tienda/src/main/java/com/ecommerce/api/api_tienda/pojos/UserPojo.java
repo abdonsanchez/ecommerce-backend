@@ -15,6 +15,7 @@ public class UserPojo {
     private String pass;
 
     public UserPojo(int usuarioId, String nombre, String apellido, String email, String pass) {
+        System.out.println("entro al constructor de UserPojo");
         this.usuarioId = usuarioId;
         this.nombre = nombre;
         this.apellido = apellido;

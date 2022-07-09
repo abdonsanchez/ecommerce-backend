@@ -12,8 +12,10 @@ public class ServerPojo {
     private String port;
 
     public ServerPojo(String url, String path, String port) {
+        System.out.println("entro al constructor ServerPojo" + " path: " + getPath());
         this.url = url;
         this.path = path;
+        System.out.println("path: " + getPath());
         this.port = port;
     }
 
@@ -40,4 +42,7 @@ public class ServerPojo {
     public void setPort(String port) {
         this.port = port;
     }
+
+
+
 }
