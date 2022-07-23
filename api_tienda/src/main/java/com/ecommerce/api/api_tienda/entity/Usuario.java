@@ -1,15 +1,16 @@
 package com.ecommerce.api.api_tienda.entity;
 
+import org.springframework.boot.context.properties.ConstructorBinding;
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
+@ConstructorBinding
 @Entity
 @Table(name = "user")
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "usr_id", nullable = false, unique = true)
     private int usr_Id;
     @Column(length = 15)

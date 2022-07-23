@@ -3,25 +3,27 @@ package com.ecommerce.api.api_tienda.pojos;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @ConstructorBinding
 @ConfigurationProperties(prefix = "producto")
-
+@Entity
+@Table(name = "producto")
 public class Producto {
 
-    private String prod_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "prod_id", nullable = false, unique = true)
+    private int prod_id;
     private String prod_nombre;
     private String prod_precio;
     private String prod_cantidad;
     private String prod_descripcion;
     private String prod_user_id;
 
-    public Producto(String prod_id, String prod_nombre, String prod_precio, String prod_cantidad, String prod_descripcion, String prod_user_id) {
-        System.out.println("entro al constructor de Producto");
-        this.prod_id = prod_id;
+    public Producto( String prod_nombre, String prod_precio, String prod_cantidad, String prod_descripcion, String prod_user_id) {
         this.prod_nombre = prod_nombre;
         this.prod_precio = prod_precio;
         this.prod_cantidad = prod_cantidad;
@@ -29,11 +31,11 @@ public class Producto {
         this.prod_user_id = prod_user_id;
     }
 
-    public String getProd_id() {
+    public int getProd_id() {
         return prod_id;
     }
 
-    public void setProd_id(String prod_id) {
+    public void setProd_id(int prod_id) {
         this.prod_id = prod_id;
     }
 
@@ -79,8 +81,8 @@ public class Producto {
 
 
     public List<Producto> listaProductos(){
-        Producto botines = new Producto("3", "botines", "30000", "3", "botines predator", "9");
-        Producto guantesBox = new Producto("4", "guantes everlast", "9000", "1", "guantes de 14 onzas", "3");
+        Producto botines = new Producto( "botines", "30000", "3", "botines predator", "9");
+        Producto guantesBox = new Producto( "guantes everlast", "9000", "1", "guantes de 15 onzas", "3");
         List<Producto> listaDeProductos = new ArrayList<>();
         listaDeProductos.add(botines);
         listaDeProductos.add(guantesBox);
