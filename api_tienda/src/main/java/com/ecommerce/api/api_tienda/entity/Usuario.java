@@ -16,7 +16,7 @@ public class Usuario {
     @Column(length = 15)
     private String usr_nombre;
     @Column(length = 50)
-    private String usr_email;
+    private String usremail;
     @Column(length = 255)
     private String usr_password;
     private LocalDate usr_fecha;
@@ -26,9 +26,9 @@ public class Usuario {
 
     }
 
-    public Usuario(String usr_nombre, String usr_email, String usr_password, LocalDate usr_fechNac) {
+    public Usuario(String usr_nombre, String usremail, String usr_password, LocalDate usr_fechNac) {
         this.usr_nombre = usr_nombre;
-        this.usr_email = usr_email;
+        this.usremail = usremail;
         this.usr_password = usr_password;
         this.usr_fechNac = usr_fechNac;
     }
@@ -49,12 +49,12 @@ public class Usuario {
         this.usr_nombre = usr_nombre;
     }
 
-    public String getUsr_email() {
-        return usr_email;
+    public String getUsremail() {
+        return usremail;
     }
 
-    public void setUsr_email(String usr_email) {
-        this.usr_email = usr_email;
+    public void setUsremail(String usremail) {
+        this.usremail = usremail;
     }
 
     public String getUsr_password() {
@@ -86,7 +86,7 @@ public class Usuario {
         return "Usuario{" +
                 "usr_Id=" + usr_Id +
                 ", usr_nombre='" + usr_nombre + '\'' +
-                ", usr_email='" + usr_email + '\'' +
+                ", usremail='" + usremail + '\'' +
                 ", usr_password='" + usr_password + '\'' +
                 ", usr_fecha=" + usr_fecha +
                 ", usr_fechNac=" + usr_fechNac +

@@ -1,5 +1,6 @@
 package com.ecommerce.api.api_tienda;
 
+import com.ecommerce.api.api_tienda.entity.Producto;
 import com.ecommerce.api.api_tienda.entity.Usuario;
 import com.ecommerce.api.api_tienda.pojos.*;
 import com.ecommerce.api.api_tienda.repository.ProductoRepository;
@@ -56,7 +57,7 @@ public class ApiTiendaApplication implements CommandLineRunner {
 			 ) {
 			System.out.println(usuario);
 
-			if (usuario.getUsr_Id() == 12){
+			if (usuario.getUsr_Id() == 135){
 				usuario.setUsr_nombre("cocoliso");
 				userRepository.save(usuario);
 			}
@@ -67,12 +68,16 @@ public class ApiTiendaApplication implements CommandLineRunner {
 	}
 
 	public List<Producto> listaProductoRun(){
-		Producto producto1 = new Producto("zapatilla", "45000", "3", "air zoom", "10");
-		Producto producto2 = new Producto("pantalon jeans", "20000", "1", "bensimon clasic", "3");
+		Producto producto1 = new Producto("zapatilla", "45000", "3", "topper lona", "10");
+		Producto producto2 = new Producto("pantalon jeans", "20000", "1", "route 66", "3");
 
 		List<Producto> productos = new ArrayList<>();
 		productos.add(producto1);
 		productos.add(producto2);
+		for (Producto p:producto.listaProductos()
+			 ) {
+			productos.add(p);
+		}
 
 		productos.stream().forEach(productoRepository::save);
 		return productos;

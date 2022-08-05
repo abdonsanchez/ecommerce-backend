@@ -1,8 +1,8 @@
-package com.ecommerce.api.api_tienda.pojos;
+package com.ecommerce.api.api_tienda.entity;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,10 @@ public class Producto {
     private String prod_cantidad;
     private String prod_descripcion;
     private String prod_user_id;
+
+    public Producto(){
+
+    }
 
     public Producto( String prod_nombre, String prod_precio, String prod_cantidad, String prod_descripcion, String prod_user_id) {
         this.prod_nombre = prod_nombre;
