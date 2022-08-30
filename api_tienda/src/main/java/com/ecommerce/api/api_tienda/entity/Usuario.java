@@ -1,7 +1,6 @@
 package com.ecommerce.api.api_tienda.entity;
 
 import org.springframework.boot.context.properties.ConstructorBinding;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -22,8 +21,6 @@ public class Usuario {
     private String usr_password;
     private LocalDate usr_fecha;
     private LocalDate usr_fechNac;
-    @Column(length = 1, nullable = false, precision = 0)
-    private int activo;
 
     public Usuario() {
 
@@ -84,14 +81,6 @@ public class Usuario {
         this.usr_fechNac = usr_fechNac;
     }
 
-    public int getActivo() {
-        return activo;
-    }
-
-    public void setActivo(int activo) {
-        this.activo = activo;
-    }
-
     @Override
     public String toString() {
         return "Usuario{" +
@@ -101,7 +90,6 @@ public class Usuario {
                 ", usr_password='" + usr_password + '\'' +
                 ", usr_fecha=" + usr_fecha +
                 ", usr_fechNac=" + usr_fechNac +
-                ", activo=" + activo +
                 '}';
     }
 }
